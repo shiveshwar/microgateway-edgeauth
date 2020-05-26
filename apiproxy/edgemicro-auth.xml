@@ -30,6 +30,7 @@
         <Policy>Get-Private-Key</Policy>
         <Policy>Get-Public-Key</Policy>
         <Policy>Get-Public-Keys</Policy>
+        <Policy>Get-Keys</Policy>
         <Policy>JavaCallout</Policy>
         <Policy>Lookup-Entity</Policy>
         <Policy>Lookup-Filter</Policy>
@@ -43,6 +44,7 @@
         <Policy>Send-JWK-Message</Policy>
         <Policy>Send-Product-List</Policy>
         <Policy>Send-Public-Key</Policy>
+        <Policy>Send-Keys</Policy>
         <Policy>Set-JWT-Variables</Policy>
         <Policy>Set-Quota-Response</Policy>
         <Policy>Set-Quota-Variables</Policy>
@@ -63,6 +65,7 @@
         <Resource>jsc://send-jwk-response.js</Resource>
         <Resource>jsc://send-product-list.js</Resource>
         <Resource>jsc://send-public-key.js</Resource>
+        <Resource>jsc://send-keys.js</Resource>
         <Resource>jsc://set-jwt-variables.js</Resource>
         <Resource>jsc://set-quota-variables.js</Resource>
         <Resource>jsc://set-response.js</Resource>

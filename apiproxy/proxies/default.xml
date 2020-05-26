@@ -26,6 +26,22 @@
             </Response>
             <Condition>(proxy.pathsuffix MatchesPath "/publicKey") and (request.verb = "GET")</Condition>
         </Flow>
+        <Flow name="Get keys">
+            <Description/>
+            <Request>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>Get-Keys</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Send-Keys</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/keys") and (request.verb = "GET")</Condition>
+        </Flow>
         <Flow name="Verify API Key">
             <Description/>
             <Request>
