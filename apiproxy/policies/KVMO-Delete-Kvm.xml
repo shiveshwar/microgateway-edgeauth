@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KVMO-Delete-Kvm" mapIdentifier="microgateway">
+    <DisplayName>Delete Kvm</DisplayName>
+    <Properties/>
+    <Delete>
+        <Key>
+            <Parameter>public_key2</Parameter>
+        </Key>
+    </Delete>
+    <Delete>
+        <Key>
+            <Parameter>public_key2_kid</Parameter>
+        </Key>
+    </Delete>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

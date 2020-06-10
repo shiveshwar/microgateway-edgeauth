@@ -26,6 +26,111 @@
             </Response>
             <Condition>(proxy.pathsuffix MatchesPath "/publicKey") and (request.verb = "GET")</Condition>
         </Flow>
+        <Flow name="Upgrade Kvm">
+            <Description/>
+            <Request>
+                <Step>
+                    <Condition>request.header.Authorization is null</Condition>
+                    <FaultRules/>
+                    <Name>AuthenticationError</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Authenticate-Call</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>EV-Upgrade-Kvm-Params</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Get-Private-Key</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Get-Public-Key</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Get-Public-Keys</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>JS-Upgrade-KVM</Name>
+                </Step>
+                <Step>
+                    <Condition>errText isnot null</Condition>
+                    <FaultRules/>
+                    <Name>RF-Forbidden-Request</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>KVMO-Update-Kvm</Name>
+                </Step>
+                <Step>
+                    <Condition>deletePublicKey2 = true</Condition>
+                    <FaultRules/>
+                    <Name>KVMO-Delete-Kvm</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>JS-Send-Upgrade-Kvm-Response</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/upgradeKvm") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Rotate Key">
+            <Description/>
+            <Request>
+                <Step>
+                    <Condition>request.header.Authorization is null</Condition>
+                    <FaultRules/>
+                    <Name>AuthenticationError</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Authenticate-Call</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>EV-Rotate-Key-Params</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Get-Private-Key</Name>
+                </Step>
+                 <Step>
+                    <FaultRules/>
+                    <Name>Get-Public-Key</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Get-Public-Keys</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>JS-Rotate-Key</Name>
+                </Step>
+                <Step>
+                    <Condition>errText isnot null</Condition>
+                    <FaultRules/>
+                    <Name>RF-Forbidden-Request</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>KVMO-Update-Kvm-Entries</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>JS-Send-Rotate-Key-Response</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/rotateKey") and (request.verb = "POST")</Condition>
+        </Flow>
         <Flow name="Verify API Key">
             <Description/>
             <Request>

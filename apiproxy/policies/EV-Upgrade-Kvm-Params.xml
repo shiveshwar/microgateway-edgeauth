@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV-Upgrade-Kvm-Params">
+    <DisplayName>Extract Upgrade Kvm Params</DisplayName>
+    <Properties/>
+    <Header name="X-Forwarded-Proto">
+        <Pattern ignoreCase="true">{proxyProto}</Pattern>
+    </Header>
+    <Header name="Host">
+        <Pattern ignoreCase="true">{proxyHost}</Pattern>
+    </Header>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <JSONPayload>
+        <Variable name="public_key" type="string">
+            <JSONPath>$.public_key</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source clearPayload="false">request</Source>
+</ExtractVariables>

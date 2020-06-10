@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KVMO-Update-Kvm-Entries" mapIdentifier="microgateway">
+    <DisplayName>Update Kvm Entries</DisplayName>
+    <Properties/>
+    <Put override="true">
+        <Key>
+            <Parameter>private_key</Parameter>
+        </Key>
+        <Value ref="newPrivateKey"/>
+    </Put>
+    <Put override="true">
+        <Key>
+            <Parameter>private_key_kid</Parameter>
+        </Key>
+        <Value ref="newPrivateKeyKid"/>
+    </Put>
+    <Put override="true">
+        <Key>
+            <Parameter>public_key</Parameter>
+        </Key>
+        <Value ref="newPublicKey"/>
+    </Put>
+    <Put override="true">
+        <Key>
+            <Parameter>public_key1_kid</Parameter>
+        </Key>
+        <Value ref="newPrivateKeyKid"/>
+    </Put>
+    <Put override="true">
+        <Key>
+            <Parameter>public_key1</Parameter>
+        </Key>
+        <Value ref="newPublicKey1"/>
+    </Put>
+    <Put override="true">
+        <Key>
+            <Parameter>public_key2_kid</Parameter>
+        </Key>
+        <Value ref="oldPublicKeyKid"/>
+    </Put>
+    <Put override="true">
+        <Key>
+            <Parameter>public_key2</Parameter>
+        </Key>
+        <Value ref="oldPublicKey"/>
+    </Put>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>
