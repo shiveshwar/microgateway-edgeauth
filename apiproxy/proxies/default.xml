@@ -44,7 +44,7 @@
                 </Step>
                 <Step>
                     <FaultRules/>
-                    <Name>Get-Private-Key</Name>
+                    <Name>Get-Private-Keys</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
@@ -71,6 +71,11 @@
                     <Condition>deletePublicKey2 = true</Condition>
                     <FaultRules/>
                     <Name>Delete-KVM-EMG-Keys</Name>
+                </Step>
+                <Step>
+                    <Condition>deleteFutureKeys = true</Condition>
+                    <FaultRules/>
+                    <Name>Delete-KVM-Future-Keys</Name>
                 </Step>
             </Request>
             <Response>
@@ -99,7 +104,7 @@
                 </Step>
                 <Step>
                     <FaultRules/>
-                    <Name>Get-Private-Key</Name>
+                    <Name>Get-Private-Keys</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
@@ -119,8 +124,14 @@
                     <Name>Raise-Fault-Bad-Request</Name>
                 </Step>
                 <Step>
+                    <Condition>nbf = false</Condition>
                     <FaultRules/>
                     <Name>Update-KVM-Rotated-Keys</Name>
+                </Step>
+                <Step>
+                    <Condition>nbf = true</Condition>
+                    <FaultRules/>
+                    <Name>Update-KVM-Future-Keys</Name>
                 </Step>
             </Request>
             <Response>
@@ -170,7 +181,16 @@
                 </Step>
                 <Step>
                     <FaultRules/>
-                    <Name>Get-Private-Key</Name>
+                    <Name>Get-Private-Keys</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Validate-Future-Key-Nbf</Name>
+                </Step>
+                <Step>
+                    <Condition>applyNewKey = true</Condition>
+                    <FaultRules/>
+                    <Name>Update-KVM-For-New-Keys</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
@@ -259,7 +279,16 @@
                 </Step>
                 <Step>
                     <FaultRules/>
-                    <Name>Get-Private-Key</Name>
+                    <Name>Get-Private-Keys</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Validate-Future-Key-Nbf</Name>
+                </Step>
+                <Step>
+                    <Condition>applyNewKey = true</Condition>
+                    <FaultRules/>
+                    <Name>Update-KVM-For-New-Keys</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
@@ -303,7 +332,16 @@
                 </Step>
                 <Step>
                     <FaultRules/>
-                    <Name>Get-Private-Key</Name>
+                    <Name>Get-Private-Keys</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Validate-Future-Key-Nbf</Name>
+                </Step>
+                <Step>
+                    <Condition>applyNewKey = true</Condition>
+                    <FaultRules/>
+                    <Name>Update-KVM-For-New-Keys</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
